@@ -50,6 +50,26 @@ Platform **magang & rekrutmen** berbasis web untuk menghubungkan **pelamar magan
 |---|---|
 | ![Aktivitas Log](screenshots/admin-aktivitas.png) | ![Laporan Sistem](screenshots/admin-laporan.png) |
 
+## 🖼️ Screenshot Pelamar
+
+| Dashboard | Profil & CV |
+|---|---|
+| ![Dashboard Pelamar](screenshots/pelamar-dashboard.png) | ![Profil & CV](screenshots/pelamar-profil.png) |
+
+| Tracking Lamaran | Chat dengan Perusahaan |
+|---|---|
+| ![Tracking Lamaran](screenshots/pelamar-lamaran.png) | ![Chat](screenshots/pelamar-chat.png) |
+
+## 🖼️ Screenshot Perusahaan (HRD)
+
+| Dashboard HRD | Kelola Lowongan |
+|---|---|
+| ![Dashboard HRD](screenshots/perusahaan-dashboard.png) | ![Kelola Lowongan](screenshots/perusahaan-lowongan.png) |
+
+| Kelola Pelamar | Kalender Interview |
+|---|---|
+| ![Kelola Pelamar](screenshots/perusahaan-pelamar.png) | ![Kalender Interview](screenshots/perusahaan-kalender.png) |
+
 ## 🧰 Tech Stack
 
 - **Backend:** Laravel 11, MySQL
