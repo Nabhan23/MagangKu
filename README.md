@@ -32,6 +32,16 @@ Platform **magang & rekrutmen** berbasis web untuk menghubungkan **pelamar magan
 - CV & dokumen verifikasi tersimpan privat (akses terotorisasi)
 - Otorisasi berbasis role di semua endpoint
 
+## 🖼️ Screenshot Halaman Publik
+
+| Landing Page | Login |
+|---|---|
+| ![Landing Page](screenshots/public-landing.png) | ![Login](screenshots/public-login.png) |
+
+| Halaman Daftar |
+|---|
+| ![Halaman Daftar](screenshots/public-daftar.png) |
+
 ## 🖼️ Screenshot Admin
 
 | Dashboard | Kelola Lowongan |
