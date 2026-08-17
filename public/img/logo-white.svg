@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" width="320" height="64">
+  <defs>
+    <linearGradient id="mkGradW" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B3E5FC"/>
+      <stop offset="100%" stop-color="#4FC3F7"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(4,4)" fill="none" stroke="url(#mkGradW)" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 52 L15 24 L32 44 L49 24 L49 52"/>
+    <path d="M32 50 L32 14"/>
+    <path d="M32 14 L25 23"/>
+    <path d="M32 14 L39 23"/>
+  </g>
+  <text x="70" y="41" font-family="'Poppins','Montserrat','Segoe UI',Arial,sans-serif" font-size="27" font-weight="800" fill="#FFFFFF" letter-spacing="1.5">MAGANGKU</text>
+</svg>

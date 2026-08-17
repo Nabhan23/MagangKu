@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520" width="520" height="520">
+  <defs>
+    <linearGradient id="heroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E1F5FE"/>
+      <stop offset="100%" stop-color="#B3E5FC"/>
+    </linearGradient>
+    <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4FC3F7"/>
+      <stop offset="100%" stop-color="#0288D1"/>
+    </linearGradient>
+    <linearGradient id="heroGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#81D4FA"/>
+      <stop offset="100%" stop-color="#1E3A5F"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <circle cx="260" cy="260" r="235" fill="url(#heroBg)"/>
+  <circle cx="260" cy="260" r="185" fill="#FFFFFF" opacity="0.55"/>
+
+  <!-- Connection nodes (pelamar & perusahaan) -->
+  <g stroke="#4FC3F7" stroke-width="3" stroke-dasharray="6 8" opacity="0.7" fill="none">
+    <path d="M120 150 Q 200 200 300 210"/>
+    <path d="M400 370 Q 300 330 210 320"/>
+  </g>
+  <circle cx="120" cy="150" r="12" fill="#4FC3F7"/>
+  <circle cx="300" cy="210" r="12" fill="#0288D1"/>
+  <circle cx="400" cy="370" r="12" fill="#4FC3F7"/>
+  <circle cx="210" cy="320" r="9" fill="#81D4FA"/>
+
+  <!-- Rising bar chart -->
+  <g stroke-linecap="round">
+    <rect x="150" y="330" width="46" height="90" rx="14" fill="#B3E5FC"/>
+    <rect x="214" y="280" width="46" height="140" rx="14" fill="#81D4FA"/>
+    <rect x="278" y="230" width="46" height="190" rx="14" fill="url(#heroGrad)"/>
+  </g>
+
+  <!-- Upward arrow (growth) -->
+  <g stroke="url(#heroGrad2)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M356 380 L356 150"/>
+    <path d="M356 150 L316 196"/>
+    <path d="M356 150 L396 196"/>
+  </g>
+
+  <!-- Graduation cap (kanan atas) -->
+  <g transform="translate(392,96)">
+    <path d="M-34 4 L0 -20 L34 4 L0 28 Z" fill="url(#heroGrad)" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+    <rect x="-6" y="14" width="12" height="16" rx="3" fill="#1E3A5F"/>
+  </g>
+
+  <!-- Briefcase (kiri bawah) -->
+  <g transform="translate(96,344)">
+    <rect x="-34" y="-10" width="68" height="52" rx="12" fill="#FFFFFF" stroke="url(#heroGrad)" stroke-width="5"/>
+    <rect x="-16" y="-26" width="32" height="18" rx="8" fill="none" stroke="url(#heroGrad)" stroke-width="5"/>
+    <rect x="-34" y="8" width="68" height="10" rx="5" fill="url(#heroGrad)" opacity="0.85"/>
+  </g>
+
+  <!-- Job offer card (atas) -->
+  <g transform="translate(330,180)">
+    <rect x="-60" y="-34" width="120" height="68" rx="16" fill="#FFFFFF" stroke="#E1F5FE" stroke-width="2"/>
+    <circle cx="-40" cy="-8" r="12" fill="url(#heroGrad)"/>
+    <rect x="-22" y="-16" width="62" height="8" rx="4" fill="#1E3A5F" opacity="0.85"/>
+    <rect x="-22" y="-2" width="44" height="7" rx="3.5" fill="#81D4FA"/>
+    <rect x="-22" y="12" width="30" height="9" rx="4.5" fill="#E1F5FE"/>
+    <circle cx="42" cy="-8" r="10" fill="#4FC3F7" opacity="0.5"/>
+  </g>
+
+  <!-- Sparkles -->
+  <path d="M470 200 l6 14 14 6 -14 6 -6 14 -6 -14 -14 -6 14 -6 Z" fill="#4FC3F7" opacity="0.8"/>
+  <path d="M60 250 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4 Z" fill="#0288D1" opacity="0.6"/>
+  <path d="M250 120 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3 Z" fill="#81D4FA"/>
+  <circle cx="445" cy="320" r="7" fill="#4FC3F7" opacity="0.7"/>
+  <circle cx="150" cy="110" r="6" fill="#0288D1" opacity="0.5"/>
+</svg>

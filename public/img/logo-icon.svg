@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="mkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4FC3F7"/>
+      <stop offset="100%" stop-color="#0288D1"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke="url(#mkGrad)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Huruf M -->
+    <path d="M15 52 L15 24 L32 44 L49 24 L49 52"/>
+    <!-- Panah pertumbuhan karier -->
+    <path d="M32 50 L32 14"/>
+    <path d="M32 14 L25 23"/>
+    <path d="M32 14 L39 23"/>
+  </g>
+</svg>
