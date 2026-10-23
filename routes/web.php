@@ -147,11 +147,11 @@ Route::middleware('guest')->group(function () {
     Route::get('/login', [LoginController::class, 'show'])->name('login');
     Route::post('/login', [LoginController::class, 'login'])->middleware('throttle:5,1');
     Route::get('/daftar', [RegisterController::class, 'show'])->name('register');
-    Route::post('/daftar', [RegisterController::class, 'register']);
+    Route::post('/daftar', [RegisterController::class, 'register'])->middleware('throttle:5,1');
     Route::get('/lupa-password', [ForgotPasswordController::class, 'show'])->name('password.request');
-    Route::post('/lupa-password', [ForgotPasswordController::class, 'send'])->name('password.email');
+    Route::post('/lupa-password', [ForgotPasswordController::class, 'send'])->name('password.email')->middleware('throttle:3,1');
     Route::get('/reset-password/{token}', [ResetPasswordController::class, 'show'])->name('password.reset');
-    Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
+    Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.update')->middleware('throttle:5,1');
 
     /* Social Login (Google & LinkedIn) */
     Route::get('/auth/{provider}/redirect', [SocialAuthController::class, 'redirect'])->whereIn('provider', ['google', 'linkedin-openid'])->name('social.redirect');

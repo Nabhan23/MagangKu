@@ -38,7 +38,7 @@ class SocialAuthController extends Controller
     /**
      * Tangani callback dari provider OAuth.
      */
-    public function callback(string $provider)
+    public function callback(Request $request, string $provider)
     {
         if (! in_array($provider, $this->providers, true)) {
             abort(404);
@@ -74,6 +74,9 @@ class SocialAuthController extends Controller
         }
 
         Auth::login($user);
+
+        // Regenerasi session setelah login untuk mencegah session fixation.
+        $request->session()->regenerate();
 
         return redirect()->intended(match (true) {
             $user->isSuperAdmin() => route('admin.dashboard'),

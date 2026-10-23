@@ -11,6 +11,9 @@ use Illuminate\Validation\Rules\Password;
 
 class ResetPasswordController extends Controller
 {
+    /** Token reset kedaluwarsa setelah 60 menit (selaras dengan config/auth.php). */
+    protected const TOKEN_EXPIRE_MINUTES = 60;
+
     public function show(string $token)
     {
         return view('auth.reset', ['token' => $token]);
@@ -26,10 +29,17 @@ class ResetPasswordController extends Controller
 
         $record = DB::table('password_reset_tokens')
             ->where('email', $request->email)
-            ->where('token', $request->token)
             ->first();
 
-        if (!$record) {
+        // Token di-hash saat disimpan, jadi verifikasi pakai Hash::check.
+        // Tolak juga token yang sudah kedaluwarsa (dibuat > 60 menit lalu).
+        $expired = ! $record
+            || ! $record->created_at
+            || \Carbon\Carbon::parse($record->created_at)
+                ->addMinutes(self::TOKEN_EXPIRE_MINUTES)
+                ->isPast();
+
+        if ($expired || ! Hash::check($request->token, $record->token)) {
             return back()->withErrors(['email' => 'Tautan reset tidak valid atau sudah kedaluwarsa.']);
         }
 
