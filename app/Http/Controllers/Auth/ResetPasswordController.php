@@ -12,7 +12,7 @@ use Illuminate\Validation\Rules\Password;
 class ResetPasswordController extends Controller
 {
     /** Token reset kedaluwarsa setelah 60 menit (selaras dengan config/auth.php). */
-    protected const TOKEN_EXPIRE_MINUTES = 60;
+    public const TOKEN_EXPIRE_MINUTES = 60;
 
     public function show(string $token)
     {

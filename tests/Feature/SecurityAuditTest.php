@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Mail\PasswordResetMail;
 use App\Models\Lamaran;
 use App\Models\Lowongan;
 use App\Models\Notification;
@@ -10,6 +11,7 @@ use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Tests\TestCase;
 
 /**
@@ -388,6 +390,8 @@ class SecurityAuditTest extends TestCase
         $this->app['env'] = 'production';
         config(['app.env' => 'production']);
 
+        Mail::fake();
+
         $user = User::where('email', 'pelamar@magangku.id')->firstOrFail();
 
         // Nonaktifkan hanya middleware CSRF: kita menguji guard environment
@@ -409,6 +413,11 @@ class SecurityAuditTest extends TestCase
         // Di production, tautan reset TIDAK boleh ditampilkan dalam respons
         $response->assertDontSee('/reset-password/', false);
         $this->assertNull(session('reset_link'), 'reset_link bocor di production!');
+
+        // Sebagai gantinya, tautan harus dikirim via email ke pemilik akun
+        Mail::assertSent(PasswordResetMail::class, function (PasswordResetMail $mail) use ($user) {
+            return $mail->hasTo($user->email);
+        });
     }
 
     public function test_password_reset_link_shown_only_in_local_env(): void

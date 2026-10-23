@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\PasswordResetMail;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
 class ForgotPasswordController extends Controller
@@ -44,7 +46,10 @@ class ForgotPasswordController extends Controller
                 ->with('reset_link', route('password.reset', $token));
         }
 
-        // Di produksi, kirim tautan lewat email (belum dikonfigurasi di proyek ini).
+        // Di produksi, kirim tautan lewat email (konfigurasi SMTP di .env:
+        // MAIL_MAILER, MAIL_HOST, MAIL_PORT, MAIL_USERNAME, MAIL_PASSWORD).
+        Mail::to($user->email)->send(new PasswordResetMail($token, ResetPasswordController::TOKEN_EXPIRE_MINUTES));
+
         return back()->with('status', 'Jika email terdaftar, tautan reset password telah dikirim.');
     }
 }
